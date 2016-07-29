@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import javax.swing.JButton;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -9,7 +10,10 @@ import javax.swing.JTextField;
 
 public class Fenetre1 extends JFrame {
 	private JPanel container = new JPanel();
-	private JTextField texte1 = new JTextField("Entrer votre texte ici.");
+	private JButton bouton1 = new JButton();
+	private FenTexte texte2 = new FenTexte();
+	
+	
 	
 	public Fenetre1(){
 		this.setTitle("PVO");
@@ -18,17 +22,26 @@ public class Fenetre1 extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.isResizable();
 		
+		bouton1.setText("Intro");
+		
 		container.setBackground(Color.WHITE);
 		JPanel pan1 = new JPanel();
+		JPanel menuBoutons = new JPanel();
+		pan1.setBackground(Color.WHITE);
+		menuBoutons.setBackground(Color.DARK_GRAY);
 		
 		Font police = new Font("Comic Sans MS", Font.BOLD, 16);
-		texte1.setFont(police);
-		texte1.setForeground(Color.BLACK);
-		pan1.add(texte1);
-		container.add(pan1, BorderLayout.NORTH);
+		texte2.setFont(police);
+		texte2.setForeground(Color.BLACK);
+		pan1.add(texte2);
+		menuBoutons.add(bouton1);
+		
+		container.add(menuBoutons, BorderLayout.NORTH);
+		container.add(pan1, BorderLayout.CENTER);
+		
 		
 		this.setContentPane(container);
-			
+
 		this.setVisible(true);
 
 	}
