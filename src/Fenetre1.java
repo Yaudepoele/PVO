@@ -30,7 +30,7 @@ public class Fenetre1 extends JFrame {
 		pan1.setBackground(Color.WHITE);
 		menuBoutons.setBackground(Color.DARK_GRAY);
 		
-		Font police = new Font("Comic Sans MS", Font.BOLD, 16);
+		Font police = new Font("Georgia Normal", Font.BOLD, 16);
 		texte2.setFont(police);
 		texte2.setForeground(Color.BLACK);
 		pan1.add(texte2);
