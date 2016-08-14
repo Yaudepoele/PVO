@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.text.NumberFormat;
 
 import javax.swing.JFormattedTextField;
@@ -13,8 +14,8 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-public class BoiteDeTexte extends JFormattedTextField implements ActionListener  {
-	private short NombreDePoints = 0;
+public class BoiteDeTexte extends JFormattedTextField implements ActionListener, KeyListener  {
+	private int NombreDePoints = 0;
 	
 // objet boite de texte ajouté au jframe principal qui permettera de choisir le nombre de points (autre que le varia) 
 	// que le pv comptera 
@@ -27,19 +28,63 @@ public class BoiteDeTexte extends JFormattedTextField implements ActionListener 
 		this.setBackground(Color.WHITE);
 		this.setVisible(true);
 		this.addActionListener(this);
+		this.addKeyListener(this);
 		
 	}
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		 System.out.println("TEXT : jtf " + this.getText());
-		// NumberFormat nb = new NumberFormat();
-				 System.out.println(NombreDePoints);
+		
+		 System.out.println("AVANT LE PARSEINT:  " + this.getText());
+		 try 
+		 {
+			 if (NombreDePoints <= 99)
+			 {
+			 NombreDePoints = Integer.parseInt(this.getText()); 
+			 }
+			 else 
+			 {
+				 
+			 }
+		 }
+		 catch (NumberFormatException ee) {
+			 System.out.println("NumberFormatException!");
+		      //Will Throw exception!
+		      //do something! anything to handle the exception.
+		}
+		 
+				 System.out.println(this.NombreDePoints);
+				
+				 
+	 }
+	public void arrowUp() 
+	{
+
+	 if (this.NombreDePoints == 99)
+	 {
+		 
+	 }
+	 else{
+		 NombreDePoints ++;
+	 }
 	 }
 
-
-
-
+	public void keyTyped(KeyEvent event) {
+	    if (event.getKeyChar() == KeyEvent.VK_UP) {
+	    	 if (NombreDePoints <= 98)
+			 {
+			 NombreDePoints ++; 
+			 }
+			 else 
+			 {
+				 
+			 }
+	      
+	    }
+	    if (event.getKeyChar() == KeyEvent.VK_DOWN) {
+	        
+	    }
+	    }
 
 
 
@@ -66,12 +111,29 @@ class JTextFieldLimit extends PlainDocument {
 	    }
 	    
 	  }
-	  
-	  
-	  
-	  
-	  
 		  }
+
+
+
+@Override
+public void keyPressed(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void keyReleased(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+
+
+
+
+
 }
 
   
