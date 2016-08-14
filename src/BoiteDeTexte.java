@@ -85,7 +85,9 @@ public class BoiteDeTexte extends JFormattedTextField implements ActionListener,
 	        
 	    }
 	    }
-
+	public int getNombreDePoints (){
+		return NombreDePoints;
+	}
 
 
 

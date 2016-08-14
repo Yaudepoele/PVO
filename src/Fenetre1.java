@@ -22,7 +22,7 @@ public class Fenetre1 extends JFrame {
 	private FenTexte texte2 = new FenTexte();
     private BoiteDeTexte bdt1 = new BoiteDeTexte(); 
     private JLabel label = new JLabel("Nombre de points :");
-    private ArbreDesPoints adpts = new ArbreDesPoints();
+    private ArbreDesPoints arbre = new ArbreDesPoints();
     private BoiteACocher bac = new BoiteACocher();
 	public Fenetre1(){
 							//Options de la fenêtre
@@ -34,13 +34,16 @@ public class Fenetre1 extends JFrame {
 		this.label.setFont(new Font("Georgia Normal", Font.PLAIN, 16));
 						
 		
-		
+		arbre.buildTree();
 		container1.setBackground(Color.GRAY);
 		JPanel pan1 = new JPanel();  //
 		pan1.setBackground(Color.GRAY);
 		
 		pan1.add(label);
 		pan1.add(bdt1);
+		
+		container1.add(new JScrollPane(arbre.getArbre()),BorderLayout.CENTER);
+		arbre.getArbre().setBackground(Color.GRAY);
 		
 		//pan1.add(adpts);
 		pan1.add(bac.get_label());
