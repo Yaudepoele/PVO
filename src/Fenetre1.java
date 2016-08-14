@@ -35,6 +35,7 @@ public class Fenetre1 extends JFrame {
 						
 		
 		arbre.buildTree();
+	
 		container1.setBackground(Color.GRAY);
 		JPanel pan1 = new JPanel();  //
 		pan1.setBackground(Color.GRAY);
@@ -60,7 +61,7 @@ public class Fenetre1 extends JFrame {
 		
 		this.setContentPane(container2);
 		this.setVisible(true);
-	
+		
 
 		
 	}

@@ -35,6 +35,7 @@ public class BoiteACocher extends JCheckBox implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		estActivé = this.isSelected();
 		System.out.println(estActivé);
+		
 	}
 	
 	

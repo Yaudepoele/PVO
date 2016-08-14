@@ -20,9 +20,12 @@ public class FenTexte extends JTextArea{
 	    Font police = new Font("Georgia Normal", Font.ITALIC, 16);
 		this.setFont(police);
 		this.setForeground(Color.BLACK);
-
-
-
 	}
+	
+	
+	
+	
+	
+	
 	
 }
